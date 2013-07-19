@@ -872,7 +872,7 @@ class SnippetManager(object):
     def _do_snippet(self, snippet, before, after):
         """ Expands the given snippet, and handles everything
         that needs to be done with it.
-        """
+       """
         # Adjust before, maybe the trigger is not the complete word
         text_before = before
         if snippet.matched:
