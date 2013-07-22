@@ -440,14 +440,15 @@ class VisualContentPreserver(object):
             return _vim.buf[ln] + '\n'
 
         if sl == el:
-            text = _vim_line_with_eol(sl-1)[sc:ec+1]
+            text = _vim_line_with_eol(sl-1)[sc:ec+1].strip()
         else:
-            text = _vim_line_with_eol(sl-1)[sc:]
+            text = _vim_line_with_eol(sl-1)[sc:].strip() + "\n"
             for cl in range(sl,el-1):
-                text += _vim_line_with_eol(cl)
-            text += _vim_line_with_eol(el-1)[:ec+1]
+                text += _vim_line_with_eol(cl).strip() + "\n"
+            text += _vim_line_with_eol(el-1)[:ec+1].strip() + "\n"
 
         self._text = text
+        #_vim.command("echom 'TEST: "+ self._text + "'")
 
     @property
     def text(self):
