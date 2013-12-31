@@ -899,6 +899,11 @@ class SnippetManager(object):
         self._jump()
 
     def _try_expand(self):
+
+        # Ultisnips don't work in macros!
+        if _vim.eval("exists('g:macroInProgress')") == "1" and _vim.eval("g:macroInProgress") != "0":
+            return False
+
         before, after = _vim.buf.current_line_splitted
         if not before:
             return False
