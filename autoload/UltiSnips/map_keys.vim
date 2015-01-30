@@ -15,12 +15,12 @@ function! UltiSnips#map_keys#MapKeys()
         exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=UltiSnips#ExpandSnippet()<cr>"
         exec "snoremap <silent> " . g:UltiSnipsExpandTrigger . " <Esc>:call UltiSnips#ExpandSnippet()<cr>"
     endif
-    exec "xnoremap <silent> " . g:UltiSnipsExpandTrigger. " :call UltiSnips#SaveLastVisualSelection()<cr>gvs"
+    exec "xnoremap <silent> " . g:UltiSnipsExpandTrigger. " :call UltiSnips#SaveLastVisualSelection()<cr>gv\"_s"
     exec "inoremap <silent> " . g:UltiSnipsListSnippets . " <C-R>=UltiSnips#ListSnippets()<cr>"
     exec "snoremap <silent> " . g:UltiSnipsListSnippets . " <Esc>:call UltiSnips#ListSnippets()<cr>"
 
     snoremap <silent> <BS> <c-g>c
     snoremap <silent> <DEL> <c-g>c
     snoremap <silent> <c-h> <c-g>c
-    snoremap <c-r> <c-g>"_c<c-r>
+    "snoremap <c-r> <c-g>"_c<c-r>
 endf
